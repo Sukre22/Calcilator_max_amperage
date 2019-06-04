@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="wrapper">
+	<h1>Расчет максимального допустимого тока 0,4 кВ</h1>
+	<form>
+		    <h4 id="c">Мощность:</h4>
+		    <h4 id="d">кВт</h4>
+		    <h4 id="f">Коэффициент мощности, cos(φ):</h4>
+		    <h4 id="e">Максимально допустимый ток:</h4>
+		    <h4 id="j">А</h4>
+			 <input id="a" type="number" step = "0.01" ><br>
+			 <input id="b" type="number" step = "0.01" ><br>
+			<input id="x" type="button" value="Рассчитать" onclick="addition();"><br>
+		</form>
+	<div id="result" color="red"> </div>
+	</div>
+</body>
+<script>
+	function addition() {
+		 // забираем с инпута
+			var a = document.getElementById('a').value;
+			var b = document.getElementById('b').value;
+ 
+			
+        // формула
+			var c = a / (Math.sqrt(3) * 0.38 * b);
+       // вывод результата
+			document.getElementById('result').innerHTML = c.toFixed(2);
+		}
+</script>
+<style>
+#wrapper {
+	width: 500px;
+	height: 300px;
+	background: #0081e7;
+	position: relative;
+}
+#a {
+	position: absolute;
+	right: 70px;
+	top: 93px;
+}     
+#d {
+   position: absolute;
+	right: 35px;
+	top: 72px;
+}
+#b {
+	position: absolute;
+	right: 70px;
+	top: 134px;
+}
+#x {
+	position: absolute;
+	right: 70px;
+	top: 155px;
+}
+#e {
+	position: absolute;
+	top: 170px;
+}
+#result {
+	position: absolute;
+	top: 192px;
+	right: 215px;
+}
+#j {
+	position: absolute;
+	top: 170px;
+	right: 195px;
+}
+	
+</style>
+</html>
